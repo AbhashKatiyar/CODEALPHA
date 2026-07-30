@@ -1,12 +1,12 @@
+# Importing Necessary Libraries and Attributes
 import tkinter as tk
 from tkinter import ttk, messagebox
 
+# used type: ignore because the system or VS Code (Code Editor in this case) may show an unnecessary warning: "The library is not downloaded or installed!"
 from deep_translator import GoogleTranslator # type: ignore
 import pyperclip # type: ignore
 
-# -----------------------------
-# Available Languages
-# -----------------------------
+# Available Languages (Working to expand)
 languages = {
     "Auto Detect": "auto",
     "English": "en",
@@ -21,10 +21,7 @@ languages = {
     "Italian": "it"
 }
 
-
-# -----------------------------
-# Translate Function
-# -----------------------------
+# Defining the Translate Function
 def translate_text():
 
     text = input_box.get("1.0", tk.END).strip()
@@ -55,10 +52,7 @@ def translate_text():
             str(e)
         )
 
-
-# -----------------------------
-# Copy Function
-# -----------------------------
+# Defining the Copy Function for copying the Translated Text
 def copy_text():
 
     translated = output_box.get("1.0", tk.END).strip()
@@ -70,10 +64,7 @@ def copy_text():
             "Translated text copied!"
         )
 
-
-# -----------------------------
-# GUI
-# -----------------------------
+# GUI Development using tkinker
 root = tk.Tk()
 root.title("Language Translator")
 root.geometry("700x550")
@@ -86,9 +77,7 @@ title = tk.Label(
 )
 title.pack(pady=10)
 
-# -----------------------------
-# Source Language
-# -----------------------------
+# Source Language (What to Translate?)
 frame1 = tk.Frame(root)
 frame1.pack()
 
@@ -106,9 +95,7 @@ source_combo = ttk.Combobox(
 source_combo.current(0)
 source_combo.grid(row=1, column=0)
 
-# -----------------------------
-# Target Language
-# -----------------------------
+# Target Language (What to Translate into?)
 tk.Label(
     frame1,
     text="Target Language"
@@ -123,9 +110,7 @@ target_combo = ttk.Combobox(
 target_combo.current(0)
 target_combo.grid(row=1, column=1)
 
-# -----------------------------
-# Input
-# -----------------------------
+# Input Box Designing
 tk.Label(
     root,
     text="Enter Text"
@@ -138,9 +123,7 @@ input_box = tk.Text(
 )
 input_box.pack()
 
-# -----------------------------
-# Translate Button
-# -----------------------------
+# Translate Button Designing
 translate_button = tk.Button(
     root,
     text="Translate",
@@ -153,9 +136,7 @@ translate_button = tk.Button(
 
 translate_button.pack(pady=15)
 
-# -----------------------------
-# Output
-# -----------------------------
+# Output Box Designing
 tk.Label(
     root,
     text="Translated Text"
@@ -168,9 +149,7 @@ output_box = tk.Text(
 )
 output_box.pack()
 
-# -----------------------------
-# Copy Button
-# -----------------------------
+# Copy Button Layout
 copy_button = tk.Button(
     root,
     text="Copy Translation",
