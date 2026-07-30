@@ -1,1 +1,5 @@
-
+Requirements for Creating a Python-based Language Translation Tool
+a. Technical Prerequisites
+1. Python Runtime: Python 3.8 to 3.11 is ideal for broader compatibility with modern AI and web frameworks.
+2. Paid or free-tier keys from providers like Google Cloud Translation or DeepL API if using cloud engines.
+3. Hardware Allocation: Dedicated RAM (4GB+ minimum) and a CUDA-compatible GPU if hosting local Neural Machine Translation (NMT) models.
